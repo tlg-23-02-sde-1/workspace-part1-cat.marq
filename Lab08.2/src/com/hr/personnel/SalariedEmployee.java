@@ -6,6 +6,7 @@ public class SalariedEmployee extends Employee {
     private double salary;
 
     public SalariedEmployee() {
+        super();  // <== if not written, this line is actually here.
     }
 
     public SalariedEmployee(String name, LocalDate hireDate) {
