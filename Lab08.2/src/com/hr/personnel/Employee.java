@@ -59,6 +59,5 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate();
-    }
+        return "Employee: name=" + getName() + ", hireDate=" + getHireDate();}
 }
