@@ -47,6 +47,12 @@ public class Department {
         }
     }
 
+    public void payEmployees() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
+        }
+    }
+
     public void workEmployees() {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].work();
@@ -77,5 +83,9 @@ public class Department {
 
     public String toString() {
         return "Department: name=" + getName() + ", location=" + getLocation();
+    }
+
+    public int getCurrentIndex() {
+        return currentIndex;
     }
 }
