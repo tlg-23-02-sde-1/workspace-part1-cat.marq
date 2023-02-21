@@ -14,7 +14,7 @@ public class HourlyEmployee extends Employee {
         setRate(rate);
         setHours(hours);
     }
-
+    @Override
     public void pay() {
         System.out.println(getName() + " Employee is paid hourly " + getRate() * getHours());
     }

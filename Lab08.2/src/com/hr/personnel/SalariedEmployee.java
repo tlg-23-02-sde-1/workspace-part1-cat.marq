@@ -19,8 +19,13 @@ public class SalariedEmployee extends Employee {
     }
 
 //  Business methods
+    @Override
     public void pay() {
         System.out.println(getName() + " Employee is paid salary " + getSalary());
+    }
+
+    public void takeVacation() {
+        System.out.println(getName() + " is on vacation");
     }
 
     //  getters and setters

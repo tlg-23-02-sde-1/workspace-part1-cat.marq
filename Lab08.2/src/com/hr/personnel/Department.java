@@ -10,17 +10,17 @@ package com.hr.personnel;
 
 /**
  * The Department class manages employees.
- *
+ * <p>
  * Properties:
- *   String name
- *   String location
- *   Employee[] employees  the Employees in this department.
- *   int currentIndex      internal counter for number of employees in the department.
- *
+ * String name
+ * String location
+ * Employee[] employees  the Employees in this department.
+ * int currentIndex      internal counter for number of employees in the department.
+ * <p>
  * Methods (excluding get/set methods):
- *   void listEmployees()  print info on all employees in the department.
- *   void workEmployees()  make all employees in the department work.
- *   String toString()     self-explanatory.
+ * void listEmployees()  print info on all employees in the department.
+ * void workEmployees()  make all employees in the department work.
+ * String toString()     self-explanatory.
  */
 public class Department {
     // fields
@@ -53,11 +53,21 @@ public class Department {
         }
     }
 
+    // Forced vacation for all salaried employees
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            // downcast the Employee reference (employee[i]) to specific type
+            SalariedEmployee semp = (SalariedEmployee) employees[i];
+            semp.takeVacation();
+        }
+    }
+
     public void workEmployees() {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].work();
         }
     }
+
 
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {
