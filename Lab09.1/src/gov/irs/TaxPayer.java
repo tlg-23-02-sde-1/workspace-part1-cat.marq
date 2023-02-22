@@ -22,4 +22,7 @@ public interface TaxPayer {
     
     public void payTaxes();
     public String getName();
+    default public void fileReturn() {
+        System.out.println("Return filed by US Mail");
+    }
 }

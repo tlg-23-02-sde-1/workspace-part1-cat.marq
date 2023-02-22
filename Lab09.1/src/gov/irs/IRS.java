@@ -22,6 +22,8 @@ public class IRS {
         for (int i = 0; i < currentIndex; i++) {
             payers[i].payTaxes();
             payers[i].getName();
+            payers[i].fileReturn();
+            System.out.println();
         }
     }
     
