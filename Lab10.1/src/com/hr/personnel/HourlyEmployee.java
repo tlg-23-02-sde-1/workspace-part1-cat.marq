@@ -14,12 +14,13 @@ public class HourlyEmployee extends Employee {
     // fields
     private double rate;
     private double hours;
+    public static final double FEDERAL_MINIMUM_WAGE = 15.0;
 
     // constructors
     public HourlyEmployee() {
     }
 
-    public HourlyEmployee(String name, LocalDate hireDate) {
+    public HourlyEmployee(String name, LocalDate hireDate) throws IllegalArgumentException {
         super(name, hireDate);  // delegate to superclass ctor for name, hireDate
     }
 
@@ -46,8 +47,11 @@ public class HourlyEmployee extends Employee {
         return rate;
     }
 
-    public void setRate(double rate) {
-        this.rate = rate;
+    public void setRate(double rate) throws IllegalArgumentException {
+        if (rate < FEDERAL_MINIMUM_WAGE)
+            throw new IllegalArgumentException("Illegal wage! Federal minimum wage is 15.0");
+        else
+            this.rate = rate;
     }
 
     public double getHours() {
