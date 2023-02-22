@@ -15,7 +15,7 @@
 import java.time.*;
 import java.time.format.*;
 import java.time.temporal.TemporalAdjuster;
-
+import static java.time.DayOfWeek.*; // now you have say Monday instead of DayOfWeek.MONDAY
 import static java.time.temporal.TemporalAdjusters.*;
 
 class DerivedDateTimeTest {
@@ -26,7 +26,7 @@ class DerivedDateTimeTest {
      */
     public static void main(String[] args) {
         // testPresidentsFirst100Days();
-         testPopularBirthdays();
+        // testPopularBirthdays();
         // testEarlyRetirement();
         // testLaborDay();
         // testElectionDay();
@@ -46,7 +46,7 @@ class DerivedDateTimeTest {
             LocalDate deadline = inauguration.plusDays(100);
             System.out.println(deadline);
         }
-    }
+
 
     /**
      * TASK: Certain times of the year seem to have more birthdays than other times.
@@ -86,7 +86,10 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testLaborDay() {
-        // TODO
+        LocalDate sept1 = LocalDate.of(1966,9,1);
+        LocalDate laborDay = sept1.with(nextOrSame(MONDAY));
+        System.out.println(laborDay);
+        System.out.println(laborDay.getDayOfWeek());
     }
 
     /**
@@ -110,7 +113,7 @@ class DerivedDateTimeTest {
     public static void testAnniversary() {
         LocalDate wedding = LocalDate.of(1969, 6, 6);
         LocalDate anniversary = wedding.plusYears(50);
-        LocalDate party = anniversary.with(TemporalAdjuster.nextOrSame(DayOfWeek.SATURDAY));
-        System.out.println(party);
+        //LocalDate party = anniversary.with(TemporalAdjuster.nextOrSame(DayOfWeek.SATURDAY));
+        //System.out.println(party);
     }
 }
